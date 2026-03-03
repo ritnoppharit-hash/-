@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>จุ๊บเเจ๊ง</title>
+<title>จุ๊บแจ๊ง</title>
 
 <style>
 body{
@@ -21,11 +21,11 @@ button{
 
 button img{
     width: 200px;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 button img:active{
-    transform: scale(0.5);
+    transform: scale(0.8);
 }
 </style>
 </head>
@@ -36,12 +36,15 @@ button img:active{
     <img src="https://i.imgur.com/4AiXzf8.jpeg">
 </button>
 
-<audio id="sound" src="file:///C:/Users/User/Downloads/%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%87_%20260218_171230_204635759.mp3"></audio>
+<audio id="sound" src="sound.mp3"></audio>
 
 <script>
 function playSound(){
     var audio = document.getElementById("sound");
-    audio.play();
+    audio.currentTime = 0;   // เล่นใหม่ทุกครั้ง
+    audio.play().catch(function(error){
+        console.log("เล่นเสียงไม่ได้:", error);
+    });
 }
 </script>
 
