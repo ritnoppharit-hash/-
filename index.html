@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>จุ๊บเเจ๊ง</title>
 
+<style>
+body{
+    background-color: #b5b5b5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial;
+}
+
+#pointBox{
+    position: absolute;
+    top: 60px;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button img{
+    width: 200px;
+    transition: 0.2s;
+}
+
+button img:active{
+    transform: scale(0.5);
+}
+</style>
+</head>
+
+<body>
+
+<div id="pointBox">
+จุ๊บเเจ๊งcore : <span id="score">0</span>
+</div>
+
+<button onclick="clickButton()">
+<img src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t1.15752-9/597400392_1187176816300132_1611686106148915589_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=zFDnfzLEVNkQ7kNvwHSu7vm&_nc_oc=AdmK4e1xa4mGKqoSTOuaO1bw6J3zH1_9aOvcCIbYsh_uoeautvKWOntkE9-EGy-eaMdiHZ2cC6MClRYfd5la-Cqi&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fbkk35-1.fna&_nc_ss=8&oh=03_Q7cD4wHP8WIaSrR_6hrm3tnsG-IPQ9kkfx7vscoZ_ziiue6t0w&oe=69D22228" />
+</button>
+
+<audio id="sound" src="https://www.myinstants.com/media/sounds/test1480.mp3"></audio>
+
+<script>
+let score = 0;
+
+function clickButton(){
+    score++;
+    document.getElementById("score").innerText = score;
+
+    let sound = document.getElementById("sound");
+    sound.currentTime = 0;
+    sound.play();
+}
+</script>
+
+</body>
+</html>
